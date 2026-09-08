@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { WorkspaceNav } from "./components/WorkspaceNav";
 import { LaunchJourney } from "./LaunchJourney";
 import {
@@ -1548,6 +1549,7 @@ export default function App() {
           />
         </Dialog>
       )}
+      <Analytics />
     </div>
   );
 }
