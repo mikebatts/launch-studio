@@ -1,0 +1,727 @@
+/* Decision surfaces share a single header / content / action rhythm. */
+.studio-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 78px;
+  padding: 14px max(24px, calc((100vw - 1136px) / 2));
+  background: #242622;
+  border-bottom: 1px solid #41463c;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  color: #eff1e9;
+}
+.studio-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  padding: 0;
+  min-height: 44px;
+  font: 800 18px var(--heading);
+}
+.studio-wordmark img {
+  width: 29px;
+  height: 29px;
+}
+.studio-nav nav {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: #1c1f1a;
+  border: 1px solid #41463c;
+  border-radius: 10px;
+}
+.studio-nav nav button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 15px;
+  min-height: 40px;
+  color: #b9c0b2;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.studio-nav nav button[aria-current="page"] {
+  background: #37432e;
+  color: #dbedc8;
+  box-shadow: inset 0 0 0 1px #536b42;
+}
+.studio-nav-context {
+  margin-left: auto;
+  white-space: nowrap;
+  color: #b0b9a6;
+  font-size: 12px;
+}
+.studio-nav button:focus-visible,
+.review-queue-item:focus-visible {
+  outline: 2px solid #c0e49d;
+  outline-offset: 3px;
+}
+.app-shell {
+  grid-template-rows: auto 1fr;
+}
+.app-shell > .studio-nav {
+  grid-column: 1 / -1;
+}
+.app-shell > .rail {
+  top: 78px;
+}
+.app-shell > .rail .brand {
+  display: none;
+}
+.app-shell > .rail .rail-divider {
+  margin-top: 0;
+}
+.decision-card {
+  container-type: inline-size;
+  overflow: hidden;
+  border: 1px solid #4d5943;
+  border-radius: 12px;
+  background: #2a3025;
+}
+.decision-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #444e3c;
+  background: #2e3528;
+}
+.decision-card-header > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.decision-card-header h2 {
+  margin: 0;
+  font: 800 17px/1.3 var(--heading);
+  color: #eff1e9;
+  letter-spacing: -0.2px;
+}
+.decision-card-icon {
+  color: #c0e49d;
+  display: inline-flex;
+}
+.decision-badge {
+  color: #c2d6ad;
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: right;
+}
+.decision-card-content {
+  padding: 20px 22px;
+}
+.decision-card-content label {
+  display: flex;
+  gap: 5px;
+  margin: 0 0 8px;
+  color: #e0e6d8;
+  font-size: 13px;
+  font-weight: 600;
+}
+.decision-card-content label span {
+  font-weight: 400;
+  color: #b5beaa;
+}
+.decision-card-content > .journey-secondary {
+  margin-top: 14px;
+}
+.decision-card-content > .journey-small {
+  margin: 12px 0 0;
+  font-size: 12px;
+}
+.journey-ai.decision-card {
+  padding: 0;
+  margin-top: 24px;
+}
+.decision-card .journey-proposal {
+  margin: 0;
+}
+.decision-card .diff-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  padding: 20px 22px;
+  margin: 0;
+}
+.decision-card .diff-columns > div {
+  padding: 16px 18px;
+  border: 1px solid #434d3c;
+  border-radius: 8px;
+  background: #262c22;
+  min-width: 0;
+}
+.decision-card .diff-columns > .proposed {
+  background: #34422b;
+  border-color: #637d4b;
+}
+.decision-card .diff-columns .eyebrow {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  color: #bdc9b0;
+}
+.decision-card .diff-columns p {
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: -0.15px;
+  color: #edf1e8;
+  margin: 10px 0 0;
+  overflow-wrap: anywhere;
+}
+.decision-card-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px 24px;
+  padding: 18px 22px;
+  border-top: 1px solid #444e3c;
+  background: #282f23;
+}
+.decision-card-actions .journey-primary,
+.decision-card-actions .journey-secondary {
+  margin: 0;
+  min-height: 46px;
+  padding: 11px 17px;
+  font-size: 13px;
+}
+.decision-card-actions .journey-text {
+  margin: 0;
+  font-size: 12px;
+  padding: 8px 0;
+}
+.decision-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 6px 22px;
+  border-top: 1px solid #444e3c;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #b2bca6;
+}
+.decision-card-meta .journey-text {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.decision-card > .journey-run,
+.decision-card > .journey-ai-error {
+  margin: 0;
+  padding: 0 22px 18px;
+}
+.decision-card > .journey-run span {
+  font-size: 12px;
+}
+.decision-card .journey-proposal > .journey-small {
+  padding: 0 22px 16px;
+}
+.journey-edit-status {
+  padding-top: 16px;
+  margin-top: 8px;
+  border-top: 1px solid #414a39;
+}
+/* A source change is a single wide decision, not two unrelated columns. */
+.journey-change.decision-card {
+  display: block;
+  padding: 0;
+}
+.journey-change .journey-change-input {
+  padding: 20px 22px;
+}
+.date-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+.date-summary > span:first-child {
+  color: #b7c3ac;
+  font-size: 12px;
+}
+.date-summary > strong {
+  font: 800 21px/1.3 var(--heading);
+  color: #f0f2eb;
+}
+.date-summary .preserved-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  color: #c1d9aa;
+  font-size: 12px;
+}
+.journey-change .journey-change-result {
+  padding: 0;
+  border: 0;
+}
+.change-impact {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding: 20px 22px 0;
+  border-top: 1px solid #444e3c;
+  font-size: 13px;
+}
+.change-impact span {
+  color: #b5c1a9;
+  font-size: 12px;
+}
+.affected-documents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0 22px 20px;
+  margin: 0;
+}
+.affected-documents li {
+  font-size: 11px;
+  color: #c9d4bd;
+  padding: 6px 10px;
+  background: #252b20;
+  border: 1px solid #46533b;
+  border-radius: 5px;
+}
+.journey-change-result > .journey-eyebrow,
+.journey-change-result > blockquote,
+.journey-change-result > p,
+.journey-change-result > .journey-text {
+  margin: 16px 22px;
+}
+.journey-change-result > blockquote {
+  font-size: 22px;
+}
+.journey-change .journey-date-input {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto;
+  align-items: end;
+  gap: 10px 20px;
+  max-width: 620px;
+  margin-top: 24px;
+}
+.journey-date-input label {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+.journey-change .journey-date-input input {
+  width: 100%;
+  max-width: none;
+}
+.journey-change .journey-date-input .journey-primary {
+  margin: 0;
+}
+@container (min-width: 620px) {
+  .decision-card .diff-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* The release tray is shared by guided and expert review. */
+.journey-columns.journey-review {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.92fr) minmax(0, 1.08fr);
+  grid-template-areas: "queue preview" "summary preview";
+  gap: 22px 30px;
+  align-items: start;
+}
+.journey-review > .release-queue {
+  grid-area: queue;
+}
+.journey-review > .review-message-preview {
+  grid-area: preview;
+  min-width: 0;
+}
+.journey-review > .journey-release {
+  grid-area: summary;
+}
+.release-queue {
+  background: #2a3025;
+  border: 1px solid #4d5943;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #edf1e7;
+}
+.release-queue > header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  border-bottom: 1px solid #444e3c;
+}
+.release-queue h2 {
+  margin: 0;
+  font: 800 16px/1.4 var(--heading);
+}
+.release-queue header p {
+  color: #b7c3ac;
+  font-size: 12px;
+  line-height: 1.55;
+  margin: 7px 0 0;
+}
+.review-count {
+  border-radius: 5px;
+  padding: 5px 7px;
+  background: #38442d;
+  color: #d2e3bf;
+  font-size: 11px;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+.review-queue-list {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 3px;
+}
+.review-queue-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 12px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: #aeba9f;
+  min-width: 0;
+}
+.review-queue-item.is-selected {
+  background: #37432d;
+  border-color: #6f8954;
+  color: #e5efd8;
+}
+.review-queue-item:hover {
+  background: #343d2b;
+}
+.review-item-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.review-item-copy strong {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #e6ecdd;
+}
+.review-item-copy small {
+  font-size: 11px;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #b2bfa4;
+}
+.review-item-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  white-space: nowrap;
+  color: #bdc8b1;
+}
+.review-item-status.is-done {
+  color: #cae3ad;
+}
+.review-preview-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 2px 0 16px;
+  font-size: 13px;
+  color: #e4ecd9;
+}
+.review-preview-heading > span {
+  color: #b2bea5;
+  font-size: 11px;
+}
+.review-acknowledge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 16px;
+  border: 1px solid #536546;
+  background: #2c3526;
+  border-radius: 9px;
+  color: #c9d7bb;
+  font-size: 12px;
+}
+.review-acknowledge .journey-secondary {
+  padding: 10px 14px;
+  min-height: 44px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.review-artifact > .release-queue {
+  margin-bottom: 22px;
+}
+.review-artifact > .review-acknowledge {
+  margin: 16px 0;
+}
+.journey-release h2 {
+  text-transform: none;
+  font-size: 24px;
+}
+.journey-release > .journey-text {
+  margin-top: 16px;
+  font-size: 12px;
+}
+@media (max-width: 1080px) {
+  .studio-nav-context {
+    display: none;
+  }
+  .studio-nav {
+    justify-content: space-between;
+    padding: 14px 24px;
+  }
+}
+@media (max-width: 900px) {
+  .journey-columns.journey-review {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "queue" "preview" "summary";
+  }
+  .date-summary .preserved-note {
+    flex-basis: 100%;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+@media (max-width: 760px) {
+  .studio-nav {
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 14px 20px;
+  }
+  .studio-wordmark {
+    min-height: 32px;
+    font-size: 17px;
+  }
+  .studio-nav nav {
+    width: 100%;
+  }
+  .studio-nav nav button {
+    flex: 1;
+    padding: 9px 10px;
+  }
+  .app-shell > .rail {
+    top: auto;
+  }
+  .decision-card-header,
+  .decision-card-content {
+    padding: 16px;
+  }
+  .decision-card .diff-columns {
+    padding: 16px;
+  }
+  .decision-card .diff-columns > div {
+    padding: 14px;
+  }
+  .decision-card .diff-columns p {
+    font-size: 16px;
+  }
+  .decision-card-actions {
+    padding: 16px;
+    gap: 10px 16px;
+  }
+  .decision-card-actions .journey-primary {
+    flex: 1 1 170px;
+  }
+  .decision-card-meta {
+    padding: 6px 16px;
+  }
+  .journey-change .journey-change-input {
+    padding: 16px;
+  }
+  .journey-change .journey-date-input {
+    grid-template-columns: 1fr;
+  }
+  .change-impact {
+    padding: 16px 16px 0;
+  }
+  .affected-documents {
+    padding: 0 16px 16px;
+  }
+  .journey-change .decision-card-actions .journey-primary {
+    width: auto;
+  }
+  .review-queue-list {
+    padding: 6px;
+  }
+  .release-queue > header {
+    padding: 16px;
+    gap: 10px;
+  }
+  .review-queue-item {
+    padding: 12px 9px;
+    gap: 8px;
+  }
+  .review-acknowledge {
+    flex-wrap: wrap;
+  }
+  .review-acknowledge > span {
+    flex: 1;
+    min-width: 130px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-nav *,
+  .decision-card *,
+  .release-queue * {
+    scroll-behavior: auto;
+  }
+}
+
+[data-review-heading] {
+  scroll-margin-top: 100px;
+}
+@media (max-width: 760px) {
+  [data-review-heading] {
+    scroll-margin-top: 20px;
+  }
+}
+
+.studio-about {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #657850;
+  border-radius: 8px;
+  background: #34412b;
+  color: #e5efd8;
+  font: 700 13px/1.4 var(--heading);
+  white-space: nowrap;
+}
+.studio-about:hover {
+  background: #425236;
+}
+.portfolio-card {
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #596c47;
+  border-radius: 12px;
+  background: #283321;
+}
+.portfolio-card > .eyebrow {
+  color: #bbd2a4;
+  font-size: 10px;
+  letter-spacing: 1.6px;
+}
+.portfolio-card h2 {
+  margin: 10px 0;
+  font: 800 27px/1.2 var(--heading);
+  color: #eef3e7;
+}
+.portfolio-card p {
+  margin: 0 0 18px;
+  color: #c2cbb8;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #dcf1c6;
+  font-size: 14px;
+  font-weight: 700;
+  text-underline-offset: 4px;
+  min-height: 36px;
+}
+.portfolio-access {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #48583a;
+  color: #b9c9aa;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.portfolio-access-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.portfolio-access code {
+  font-size: 14px;
+  color: #eef3e7;
+  background: #1f281a;
+  border-radius: 6px;
+  padding: 10px;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  user-select: all;
+}
+.portfolio-access button {
+  min-height: 40px;
+}
+.portfolio-notice {
+  display: block;
+  margin-top: 8px;
+}
+.portfolio-notice:empty {
+  display: none;
+}
+@media (max-width: 760px) {
+  .studio-nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .studio-nav > nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .studio-about {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  .studio-about svg {
+    display: none;
+  }
+  .portfolio-card {
+    padding: 20px;
+  }
+}
+@media (max-width: 380px) {
+  .studio-wordmark {
+    gap: 6px;
+    font-size: 15px;
+  }
+  .studio-wordmark img {
+    width: 24px;
+    height: 24px;
+  }
+  .studio-about {
+    padding: 8px;
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,557 @@
+/* The first-minute workspace: learner outcomes first, editing on demand.
+   Scoped to Compose so release, delivery, and modal layouts stay independent. */
+.compose-heading {
+  align-items: center;
+}
+.compose-heading h1 {
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: -1px;
+}
+.compose-heading p {
+  font-size: 14px;
+  max-width: 580px;
+}
+.course-context {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  align-items: center;
+  margin: 0 34px 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+}
+.course-context button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: left;
+}
+.course-context strong {
+  color: #f1f1ee;
+}
+.course-context button:hover {
+  color: #d1e5b9;
+}
+.first-minute-toolbar {
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  border: 0;
+  padding: 0;
+}
+.workspace-panes {
+  display: flex;
+  gap: 4px;
+  margin-right: auto;
+}
+.workspace-panes button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  padding: 10px 14px;
+  color: #bbbdb6;
+  background: transparent;
+  font-size: 13px;
+}
+.workspace-panes button:hover {
+  background: #32342d;
+  color: white;
+}
+.workspace-panes button.selected {
+  background: #39452f;
+  color: #edf6e3;
+  border-color: #647f4b;
+}
+.first-minute-toolbar .segmented button {
+  min-height: 40px;
+  font-size: 12px;
+}
+.first-minute-toolbar.mode-preview .variant-select,
+.first-minute-toolbar.mode-preview .document-origin {
+  display: none;
+}
+.first-minute-toolbar.mode-edit .document-origin {
+  width: auto;
+}
+.first-minute-grid {
+  padding-top: 18px;
+  padding-bottom: 20px;
+}
+.first-minute-grid.mobile-preview {
+  display: block;
+}
+.first-minute-grid.mobile-preview .editor-panel {
+  display: none;
+}
+.first-minute-grid.mobile-preview .preview-panel {
+  display: grid;
+  grid-template-columns: minmax(235px, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(24px, 4vw, 58px);
+  padding: 26px;
+  background: #2c2e28;
+  border: 1px solid #464b3d;
+  border-radius: 12px;
+  align-items: start;
+}
+.learner-context {
+  min-width: 0;
+}
+.learner-heading h2 {
+  font-size: 25px;
+  margin: 5px 0 8px;
+  color: #f0f1eb;
+}
+.learner-heading p {
+  color: #c2c6b9;
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 320px;
+}
+.first-minute-grid.mobile-preview .player-picker {
+  grid-template-columns: 1fr;
+  margin: 21px 0 18px;
+  gap: 8px;
+}
+.first-minute-grid .player-picker button {
+  background: #282b25;
+  border-color: #4a5041;
+}
+.first-minute-grid .player-picker button.selected {
+  background: #3b4b2f;
+  border-color: #8cae69;
+}
+.first-minute-grid .player-picker button:hover {
+  border-color: #a1b78b;
+}
+.first-minute-grid.mobile-preview .player-picker button {
+  min-height: 68px;
+  padding: 12px;
+  gap: 12px;
+}
+.first-minute-grid .player-picker strong {
+  font-size: 14px;
+  color: #f4f4ef;
+}
+.first-minute-grid .player-picker small {
+  font-size: 11px;
+  color: #bcc3b3;
+  white-space: normal;
+}
+.first-minute-grid .player-picker .player-outcome {
+  display: block;
+  font-size: 12px;
+  color: #d3e5bc;
+  margin-top: 4px;
+}
+.first-minute-grid.mobile-preview .player-picker button > svg {
+  display: block;
+  width: 15px;
+}
+.first-minute-grid .eligibility {
+  margin: 0;
+  padding: 12px;
+}
+.first-minute-grid .eligibility p {
+  font-size: 12px;
+}
+.preview-scope {
+  color: #b6bbae;
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 12px 2px 0;
+}
+.first-minute-grid.mobile-preview .preview-scroll {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+}
+.invitation-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-bottom: 12px;
+  min-height: 32px;
+  font-size: 12px;
+  color: #c8cdbc;
+}
+.invitation-heading button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 0;
+  padding: 8px 0;
+  min-height: 36px;
+  color: #d2e8b9;
+  font-size: 12px;
+}
+.invitation-heading button:hover {
+  color: white;
+}
+.first-minute-grid.mobile-preview .art-wrap img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 16 / 7;
+  object-fit: contain;
+}
+.first-minute-grid.mobile-preview .message-copy {
+  padding: 22px 26px 26px;
+}
+.first-minute-grid.mobile-preview .message-copy h2 {
+  font-size: clamp(26px, 2.6vw, 36px);
+}
+.first-minute-grid.mobile-preview .rendered-body {
+  font-size: 14px;
+}
+.first-minute-grid.mobile-preview .suppressed-preview {
+  min-height: 380px;
+  padding-top: 50px;
+}
+.first-minute-grid.mobile-edit .learner-heading .eyebrow,
+.first-minute-grid.mobile-edit .learner-heading p {
+  display: none;
+}
+.first-minute-grid.mobile-edit .learner-heading h2 {
+  font-size: 17px;
+  margin: 0 0 12px;
+}
+.first-minute-grid.mobile-edit .player-picker {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.first-minute-grid.mobile-edit .player-picker button {
+  min-height: 68px;
+  padding: 10px;
+}
+.first-minute-grid.mobile-edit .variant-mismatch {
+  margin-top: 12px;
+}
+.first-minute-grid.mobile-edit .invitation-heading {
+  margin-top: 8px;
+}
+.explore-workflow {
+  margin: 22px 34px 24px;
+}
+.explore-workflow > header {
+  margin-bottom: 20px;
+}
+.explore-workflow h2 {
+  font-size: 24px;
+  margin-top: 5px;
+}
+.workflow-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.workflow-actions > button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #2d2e28;
+  text-align: left;
+  color: #f0f1eb;
+  min-width: 0;
+}
+.workflow-actions > button:hover {
+  background: #33382d;
+  border-color: #7f9765;
+}
+.workflow-actions > button > svg {
+  color: #a9c98b;
+}
+.workflow-actions strong {
+  font-size: 16px;
+}
+.workflow-actions > button > span {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #bfc3b7;
+}
+.workflow-actions > button > .workflow-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #d0e6b6;
+  padding-top: 5px;
+  margin-top: auto;
+}
+.explore-footnote {
+  color: #b3b5ad;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.explore-footnote button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #cee1b9;
+  background: none;
+  border: 0;
+  padding: 8px 0;
+  font-size: inherit;
+}
+.explore-workflow + .launch-check {
+  margin-bottom: 34px;
+}
+.revision-shortcut {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--line);
+  background: #2b3026;
+  color: #bfc9b3;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.revision-shortcut button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 0;
+  color: #d1e9b6;
+  font-size: 12px;
+  min-height: 44px;
+  padding: 5px 0;
+}
+@media (max-width: 1240px) {
+  .course-context,
+  .explore-workflow {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .first-minute-grid.mobile-preview .preview-panel {
+    gap: 25px;
+    padding: 22px;
+  }
+}
+@media (max-width: 1000px) {
+  .course-context,
+  .explore-workflow {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .first-minute-grid.mobile-preview .preview-panel {
+    grid-template-columns: minmax(210px, 0.7fr) minmax(0, 1.3fr);
+    gap: 20px;
+    padding: 18px;
+  }
+  .first-minute-grid.mobile-preview .player-picker .avatar {
+    display: none;
+  }
+  .workflow-actions {
+    gap: 10px;
+  }
+  .workflow-actions > button {
+    padding: 17px;
+  }
+}
+@media (max-width: 760px) {
+  .compose-heading {
+    padding: 22px 17px 16px;
+  }
+  .compose-heading h1 {
+    font-size: 29px;
+    max-width: 370px;
+  }
+  .compose-heading p {
+    font-size: 14px;
+    max-width: 420px;
+  }
+  .compose-heading .heading-actions {
+    display: none;
+  }
+  .compose-heading .mobile-credit {
+    display: none;
+  }
+  .compose-heading .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .course-context {
+    margin: 0 17px 14px;
+    padding-bottom: 9px;
+    gap: 0;
+  }
+  .course-context button {
+    min-height: 38px;
+    font-size: 11px;
+  }
+  .course-context button:first-child > span {
+    display: none;
+  }
+  .course-context {
+    justify-content: space-between;
+    gap: 0 12px;
+  }
+  .course-context button:first-child > svg:last-child {
+    margin-left: auto;
+  }
+  .first-minute-toolbar {
+    margin: 0 17px;
+    gap: 12px;
+    padding-bottom: 0;
+  }
+  .workspace-panes {
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #44483c;
+    padding-bottom: 10px;
+  }
+  .workspace-panes button {
+    flex: 1;
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+  .first-minute-toolbar .segmented button {
+    min-height: 40px;
+    font-size: 12px;
+  }
+  .first-minute-toolbar.mode-edit .variant-select {
+    min-width: 0;
+    flex: 1;
+    max-width: 160px;
+  }
+  .first-minute-toolbar.mode-edit .variant-select select {
+    width: 100%;
+    font-size: 12px;
+    min-height: 42px;
+  }
+  .first-minute-toolbar.mode-edit .document-origin {
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+  }
+  .first-minute-grid {
+    padding: 16px 17px 12px;
+  }
+  .first-minute-grid.mobile-preview .preview-panel {
+    display: block;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+  }
+  .learner-heading h2 {
+    font-size: 22px;
+  }
+  .learner-heading > .eyebrow {
+    display: none;
+  }
+  .learner-heading p {
+    display: none;
+  }
+  .first-minute-grid.mobile-preview .player-picker {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 12px 0;
+    gap: 6px;
+  }
+  .first-minute-grid.mobile-preview .player-picker button {
+    padding: 10px 7px;
+    min-height: 86px;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .first-minute-grid.mobile-preview .player-picker button > svg,
+  .first-minute-grid.mobile-preview .player-picker small {
+    display: none;
+  }
+  .first-minute-grid .player-picker small {
+    font-size: 11px;
+  }
+  .first-minute-grid .player-picker .player-outcome {
+    font-size: 12px;
+  }
+  .first-minute-grid .eligibility {
+    padding: 11px 12px;
+  }
+  .preview-scope {
+    display: none;
+  }
+  .first-minute-grid.mobile-preview .preview-scroll {
+    max-width: none;
+  }
+  .invitation-heading {
+    margin: 6px 0 12px;
+    font-size: 12px;
+  }
+  .invitation-heading button {
+    min-height: 44px;
+  }
+  .first-minute-grid.mobile-preview .art-wrap img {
+    aspect-ratio: 16 / 9;
+  }
+  .first-minute-grid.mobile-preview .message-copy {
+    padding: 20px;
+  }
+  .first-minute-grid.mobile-preview .message-copy h2 {
+    font-size: 28px;
+  }
+  .first-minute-grid.mobile-preview .suppressed-preview {
+    min-height: 300px;
+    padding: 30px 12px 12px;
+  }
+  .first-minute-grid.mobile-edit .editor-panel {
+    display: block;
+  }
+  .first-minute-grid.mobile-edit .preview-panel {
+    display: none;
+  }
+  .explore-workflow {
+    margin: 28px 17px 20px;
+  }
+  .explore-workflow h2 {
+    font-size: 24px;
+  }
+  .workflow-actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .workflow-actions > button {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 7px 12px;
+    padding: 20px 17px;
+  }
+  .workflow-actions > button > svg {
+    grid-row: 1 / 4;
+    margin-top: 2px;
+  }
+  .workflow-actions > button > span {
+    grid-column: 2;
+  }
+  .workflow-actions strong {
+    font-size: 16px;
+  }
+  .explore-footnote {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .explore-footnote button {
+    min-height: 44px;
+    text-align: left;
+  }
+}
